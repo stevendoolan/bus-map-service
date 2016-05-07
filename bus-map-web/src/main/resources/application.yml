@@ -1,0 +1,9 @@
+info:
+    app:
+        name: bus-map-service
+
+server:
+    port: 4000
+
+management:
+    port: -1
