@@ -3,7 +3,7 @@ info:
         name: bus-map-service
 
 server:
-    port: 4000
+    port: 8080
 
 management:
     port: -1
