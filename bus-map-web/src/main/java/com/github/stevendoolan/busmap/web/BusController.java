@@ -29,16 +29,16 @@ public class BusController {
         this.translinkService = translinkService;
     }
 
-    @RequestMapping("/bus/{direction}/{route}")
+    @RequestMapping("/bus/{route}/{direction}")
     public ResponseEntity<Locations> busLocations (
-            @PathVariable("direction") String direction,
-            @PathVariable("route") String route
+            @PathVariable("route") String route,
+            @PathVariable("direction") String direction
             ) throws ServiceException {
         Locations locations = new Locations();
         locations.setMessage("test");
         locations.setPositions(translinkService.getPositions(route));
 
-        return new ResponseEntity<Locations>(locations, HttpStatus.OK);
+        return new ResponseEntity<>(locations, HttpStatus.OK);
     }
 
     @ExceptionHandler(Exception.class)
@@ -46,7 +46,7 @@ public class BusController {
         logger.error("Unknown Error", e);
         ErrorInformation errorInformation = new ErrorInformation();
         errorInformation.setMessage(e.getMessage());
-        return new ResponseEntity<ErrorInformation>(errorInformation, HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(errorInformation, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 }

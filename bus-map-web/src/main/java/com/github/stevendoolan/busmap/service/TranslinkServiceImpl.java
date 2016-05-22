@@ -1,5 +1,6 @@
 package com.github.stevendoolan.busmap.service;
 
+import com.github.stevendoolan.busmap.model.DirectionType;
 import com.github.stevendoolan.busmap.model.Position;
 import com.github.stevendoolan.busmap.model.ServiceException;
 import com.google.transit.realtime.GtfsRealtime;
@@ -52,6 +53,7 @@ public class TranslinkServiceImpl implements TranslinkService {
         position.setRouteId(vehicle.getTrip().getRouteId());
         position.setLongitude(vehicle.getPosition().getLongitude());
         position.setLatitude(vehicle.getPosition().getLatitude());
+        position.setDirection(DirectionType.forCode(vehicle.getTrip().getDirectionId()));
         return position;
     }
 

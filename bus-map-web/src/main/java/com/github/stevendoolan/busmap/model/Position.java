@@ -8,6 +8,7 @@ public class Position {
     private String routeId;
     private float longitude;
     private float latitude;
+    private DirectionType direction;
 
     public String getRouteId() {
         return routeId;
@@ -31,5 +32,13 @@ public class Position {
 
     public void setLatitude(float latitude) {
         this.latitude = latitude;
+    }
+
+    public DirectionType getDirection() {
+        return direction;
+    }
+
+    public void setDirection(DirectionType direction) {
+        this.direction = direction;
     }
 }

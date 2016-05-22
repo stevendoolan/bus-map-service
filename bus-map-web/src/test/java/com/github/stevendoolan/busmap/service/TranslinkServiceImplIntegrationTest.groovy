@@ -18,7 +18,7 @@ class TranslinkServiceImplIntegrationTest extends Specification {
 
     def "GetFeedMessages"() {
         when:
-        List<Position> message = translinkService.getPositions("503")
+        List<Position> message = translinkService.getPositions("200")
 
         then:
         message != null
