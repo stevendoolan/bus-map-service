@@ -4,5 +4,13 @@
 https://codeship.com/projects/150576
 
 ## Testing
-http://localhost/bus/P216/inbound
+Deploy to Tomcat at /bus-map-service and go to:
 
+### Local
+http://localhost:8080/bus-map-service/bus/P216/inbound
+
+### Test
+http://doolans-busmapservice-test.ap-southeast-2.elasticbeanstalk.com/bus/P216/inbound
+
+### Production
+TBA
